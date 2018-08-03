@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import org.houxg.leamonax.BuildConfig;
 import org.houxg.leamonax.R;
 import org.houxg.leamonax.model.Authentication;
 import org.houxg.leamonax.model.BaseResponse;
@@ -121,6 +122,13 @@ public class SignInActivity extends BaseActivity implements TextWatcher {
                 mExampleTv.setText(String.format(Locale.US, getString(R.string.host_example), s.toString()));
             }
         });
+
+        mCustomHostBtn.setVisibility(View.GONE);
+        if(BuildConfig.DEBUG) {
+            mEmailEt.setText("leanote@leanote.com");
+            mPasswordEt.setText("leanote");
+
+        }
     }
 
     @Override
