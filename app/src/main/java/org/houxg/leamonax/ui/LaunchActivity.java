@@ -28,40 +28,44 @@ public class LaunchActivity extends Activity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_launch);
-        if(Build.VERSION.SDK_INT >= 23){
-            if(hasPermission(
-                    Manifest.permission.CAMERA ,
-                    Manifest.permission.WRITE_EXTERNAL_STORAGE ,
-                    Manifest.permission.READ_EXTERNAL_STORAGE ,
-                    Manifest.permission.READ_PHONE_STATE
-            )){
-                doAfterGetPermission();
-            }else {
-                AlertDialog.Builder builder=new AlertDialog.Builder(LaunchActivity.this);
-                builder.setMessage(getString(R.string.permission_get_description));
-                builder.setTitle(getString(R.string.permission_get));
-                builder.setPositiveButton(getString(R.string.allow), new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        requestPermission(PERMISSIONS_REQUEST_CODE,
-                                Manifest.permission.CAMERA ,
-                                Manifest.permission.WRITE_EXTERNAL_STORAGE ,
-                                Manifest.permission.READ_EXTERNAL_STORAGE ,
-                                Manifest.permission.READ_PHONE_STATE
-                        );
-                    }
-                });
-                builder.setNegativeButton(getString(R.string.cancel), new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        finish();
-                    }
-                });
-                builder.setCancelable(false).create().show();
-            }
-        }else {
-            doAfterGetPermission();
+        if(ActivityCompat.checkSelfPermission(this,Manifest.permission.CAMERA) !=PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.CAMERA},0);
         }
+        doAfterGetPermission();
+//        if(Build.VERSION.SDK_INT >= 23){
+//            if(hasPermission(
+//                    Manifest.permission.CAMERA ,
+//                    Manifest.permission.WRITE_EXTERNAL_STORAGE ,
+//                    Manifest.permission.READ_EXTERNAL_STORAGE ,
+//                    Manifest.permission.READ_PHONE_STATE
+//            )){
+//                doAfterGetPermission();
+//            }else {
+//                AlertDialog.Builder builder=new AlertDialog.Builder(LaunchActivity.this);
+//                builder.setMessage(getString(R.string.permission_get_description));
+//                builder.setTitle(getString(R.string.permission_get));
+//                builder.setPositiveButton(getString(R.string.allow), new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialog, int which) {
+//                        requestPermission(PERMISSIONS_REQUEST_CODE,
+//                                Manifest.permission.CAMERA ,
+//                                Manifest.permission.WRITE_EXTERNAL_STORAGE ,
+//                                Manifest.permission.READ_EXTERNAL_STORAGE ,
+//                                Manifest.permission.READ_PHONE_STATE
+//                        );
+//                    }
+//                });
+//                builder.setNegativeButton(getString(R.string.cancel), new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialog, int which) {
+//                        finish();
+//                    }
+//                });
+//                builder.setCancelable(false).create().show();
+//            }
+//        }else {
+//            doAfterGetPermission();
+//        }
 
     }
 
