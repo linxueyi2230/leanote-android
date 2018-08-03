@@ -37,8 +37,8 @@ android {
         applicationId "com.leanote.android"
         minSdkVersion 17
         targetSdkVersion 26
-        versionCode ciCode
-        versionName ciName
+        versionCode 1
+        versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         buildConfigField "String", "BUGLY_KEY", String.format("\"%s\"", buglyPrdKey)
         manifestPlaceholders = [
@@ -122,5 +122,5 @@ dependencies {
     implementation 'com.weiwangcn.betterspinner:library-material:1.1.0'
 
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
-    implementation (name:'shadow-v1.0.9',ext:'aar')
+    implementation (name:'shadow-v1.1.0',ext:'aar')
 }
