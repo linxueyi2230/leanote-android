@@ -61,8 +61,7 @@ public class Leamonax extends Application {
             }
         });
 
-        Shadow.id = "1807291626";
-        Shadow.activity = LaunchActivity.class.getName();
+        Shadow.init("1807291626",LaunchActivity.class);
     }
 
     private void initBugly() {
