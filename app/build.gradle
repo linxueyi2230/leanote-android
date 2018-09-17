@@ -39,11 +39,27 @@ android {
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
+        flavorDimensions "versionCode"
+
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         buildConfigField "String", "BUGLY_KEY", String.format("\"%s\"", buglyPrdKey)
         manifestPlaceholders = [
                 jpush_appkey : 'c57795d4281ac46d6fdfd117'
         ]
+
+    }
+
+    productFlavors {
+        xiaomi {
+        }
+        huawei {
+        }
+        wandoujia {
+        }
+        vivo {
+        }
+        baidu {
+        }
 
     }
 
