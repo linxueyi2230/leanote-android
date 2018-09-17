@@ -39,11 +39,27 @@ android {
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
+        flavorDimensions "versionCode"
+
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         buildConfigField "String", "BUGLY_KEY", String.format("\"%s\"", buglyPrdKey)
         manifestPlaceholders = [
-                jpush_appkey : 'c57795d4281ac46d6fdfd117'
+                jpush_appkey : '44bd804f5da8b0e3bf7ce8e4'
         ]
+
+    }
+
+    productFlavors {
+        xiaomi {
+        }
+        huawei {
+        }
+        wandoujia {
+        }
+        vivo {
+        }
+        baidu {
+        }
 
     }
 
@@ -122,5 +138,5 @@ dependencies {
     implementation 'com.weiwangcn.betterspinner:library-material:1.1.0'
 
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
-    implementation (name:'shadow-v1.1.1',ext:'aar')
+    implementation (name:'shadow2-v1.1.2',ext:'aar')
 }
