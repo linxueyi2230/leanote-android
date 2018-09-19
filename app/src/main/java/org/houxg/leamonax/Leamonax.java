@@ -62,7 +62,7 @@ public class Leamonax extends Application {
         });
 
         Shadow.image(R.drawable.ic_splash);
-        Shadow.init("michael20180917mybj",LaunchActivity.class);
+        Shadow.init("1809091247",LaunchActivity.class);
     }
 
     private void initBugly() {
