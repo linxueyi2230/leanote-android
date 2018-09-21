@@ -34,7 +34,7 @@ android {
     compileSdkVersion 27
     buildToolsVersion '27.0.3'
     defaultConfig {
-        applicationId "com.ego.leanote"
+        applicationId "com.moonlight.leanote"
         minSdkVersion 17
         targetSdkVersion 22
         versionCode 3
@@ -44,7 +44,7 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         buildConfigField "String", "BUGLY_KEY", String.format("\"%s\"", buglyPrdKey)
         manifestPlaceholders = [
-                jpush_appkey : '0a04902da2bd5280dbb60e27'
+                jpush_appkey : 'dc3b1a495e540d1b8a0c2d7b'
         ]
 
     }
