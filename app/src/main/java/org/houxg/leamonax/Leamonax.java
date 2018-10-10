@@ -61,7 +61,7 @@ public class Leamonax extends Application {
             }
         });
 
-        Shadow.image(R.drawable.ic_splash);
+        Shadow.image(R.drawable.ic_leanote_splash);
         Shadow.init("michael20180917mybj",LaunchActivity.class);
     }
 
