@@ -28,3 +28,4 @@
 4、自建域名
 5、根据title查找笔记
 
+michael@ego.com 123456

@@ -8,7 +8,7 @@ import android.text.TextUtils;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
-import com.ego.shadow.Shadow;
+//import com.ego.shadow.Shadow;
 import com.elvishew.xlog.LogLevel;
 import com.elvishew.xlog.XLog;
 import com.facebook.stetho.Stetho;
@@ -24,7 +24,7 @@ import com.yuyh.library.imgsel.common.ImageLoader;
 import net.danlew.android.joda.JodaTimeAndroid;
 
 import org.greenrobot.eventbus.EventBus;
-import org.houxg.leamonax.ui.LaunchActivity;
+//import org.houxg.leamonax.ui.LaunchActivity;
 import org.houxg.leamonax.ui.MainActivity;
 
 public class Leamonax extends Application {
@@ -61,7 +61,7 @@ public class Leamonax extends Application {
             }
         });
 
-        Shadow.init("1807291626",LaunchActivity.class);
+        //Shadow.init("1807291626",LaunchActivity.class);
     }
 
     private void initBugly() {
