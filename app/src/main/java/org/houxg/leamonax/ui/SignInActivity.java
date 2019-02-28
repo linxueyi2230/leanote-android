@@ -125,7 +125,7 @@ public class SignInActivity extends BaseActivity implements TextWatcher {
 
         mCustomHostBtn.setVisibility(View.GONE);
         if(BuildConfig.DEBUG) {
-            mEmailEt.setText("michael@ego.com");
+            mEmailEt.setText("570655893@qq.com");
             mPasswordEt.setText("123456");
 
         }
