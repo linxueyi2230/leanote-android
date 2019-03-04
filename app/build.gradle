@@ -34,7 +34,7 @@ android {
     compileSdkVersion 27
     buildToolsVersion '27.0.3'
     defaultConfig {
-        applicationId "com.leanote.antnote"
+        applicationId "com.leanote.qihnote"
         minSdkVersion 21
         targetSdkVersion 27
         versionCode 1
@@ -43,8 +43,13 @@ android {
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         buildConfigField "String", "BUGLY_KEY", String.format("\"%s\"", buglyPrdKey)
+//        manifestPlaceholders = [
+//                jpush_appkey : 'c6623d8cee185ba796495fb8'
+//        ]
         manifestPlaceholders = [
-                jpush_appkey : 'c6623d8cee185ba796495fb8'
+                JPUSH_PKGNAME: applicationId,
+                JPUSH_APPKEY : '9b523b058c33a9d7375fecad', //JPush上注册的包名对应的/appkey.测试：652d985f756e263a730e5c9e
+                JPUSH_CHANNEL: 'developer-default'
         ]
 
     }
@@ -87,6 +92,14 @@ android {
     }
 }
 
+apply plugin: 'replugin-host-gradle'
+repluginHostConfig {
+
+    /**
+     * 主包不使用 请注意，本sdk 不支持
+     */
+    useAppCompat = false
+}
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
@@ -133,5 +146,7 @@ dependencies {
     implementation 'com.weiwangcn.betterspinner:library-material:1.1.0'
 
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
-    implementation (name:'shadow6.2',ext:'aar')
+//    implementation (name:'shadow6.2',ext:'aar')
+    implementation project(":bxvip")
+    api (name:'host-sdk-release1.0.9.01',ext:'aar')
 }

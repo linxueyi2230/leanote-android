@@ -1,0 +1,8 @@
+测试包名和极光key
+com.haocai.ceshi001
+652d985f756e263a730e5c9e
+
+https://github.com/bxvip 傻屌SDK作者的主页
+https://github.com/zhangnanvip?tab=repositories ReDemo主页
+
+

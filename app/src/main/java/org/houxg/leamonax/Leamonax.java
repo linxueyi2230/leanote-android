@@ -8,7 +8,7 @@ import android.text.TextUtils;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
-import com.ego.shadow.Shadow;
+//import com.ego.shadow.Shadow;
 import com.elvishew.xlog.LogLevel;
 import com.elvishew.xlog.XLog;
 import com.facebook.stetho.Stetho;
@@ -27,7 +27,10 @@ import org.greenrobot.eventbus.EventBus;
 import org.houxg.leamonax.ui.LaunchActivity;
 import org.houxg.leamonax.ui.MainActivity;
 
-public class Leamonax extends Application {
+import co.bxvip.Fuck;
+import co.bxvip.sdk.BxRePluginAppLicationMakeImpl;
+
+public class Leamonax extends BxRePluginAppLicationMakeImpl {
 
     private static Context mContext;
 
@@ -61,7 +64,7 @@ public class Leamonax extends Application {
             }
         });
 
-        Shadow.init(this,"41902282047",LaunchActivity.class);
+//        Shadow.init(this,"41902282047",LaunchActivity.class);
     }
 
     private void initBugly() {
@@ -95,5 +98,15 @@ public class Leamonax extends Application {
         Beta.strUpgradeDialogCancelBtn =res.getString(R.string.next_time);
         
         Bugly.init(this, BuildConfig.BUGLY_KEY, BuildConfig.DEBUG);
+    }
+
+    @Override
+    public void initJPushYouNeed() {
+        Fuck.init(this);
+    }
+
+    @Override
+    public void initRePluginYourNeed() {
+
     }
 }
