@@ -246,6 +246,16 @@ public class SignInActivity extends BaseActivity implements TextWatcher {
     void clickedSignUp() {
         final String email = mEmailEt.getText().toString();
         final String password = mPasswordEt.getText().toString();
+        if (TextUtils.isEmpty(email)){
+            ToastUtils.show(this,"请输入注册邮箱");
+            return;
+        }
+
+        if (TextUtils.isEmpty(password)){
+            ToastUtils.show(this,"请输入注册密码");
+            return;
+        }
+
         final String host = getHost();
         initHost()
                 .flatMap(new Func1<String, Observable<BaseResponse>>() {
@@ -288,7 +298,12 @@ public class SignInActivity extends BaseActivity implements TextWatcher {
                         e.printStackTrace();
                         if (e instanceof IllegalHostException) {
                             ToastUtils.show(SignInActivity.this, R.string.illegal_host);
-                        } else {
+                            animateFinish(mSignUpBtn, mSignUpProgress);
+                        } else if (e instanceof LeaFailure){
+                            BaseResponse response = ((LeaFailure) e).getResponse();
+                            ToastUtils.show(SignInActivity.this,response.msg);
+                            animateFinish(mSignUpBtn, mSignUpProgress);
+                        }else {
                             ToastUtils.showNetworkError(SignInActivity.this);
                             animateFinish(mSignUpBtn, mSignUpProgress);
                         }
