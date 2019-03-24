@@ -63,6 +63,7 @@ public class MainActivity extends BaseActivity implements Navigation.Callback {
         initToolBar((Toolbar) findViewById(R.id.toolbar));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_menu_white);
+        getSupportActionBar().setTitle("笔记");
         CrashReport.setUserId(Account.getCurrent().getUserId());
 
         mNavigation = new Navigation(this);

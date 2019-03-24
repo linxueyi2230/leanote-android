@@ -214,6 +214,7 @@
             android:layout_alignParentStart="true"
             android:layout_centerVertical="true"
             android:layout_marginStart="48dp"
+
             android:fontFamily="sans-serif-medium"
             android:text="@string/my_blog"
             android:textColor="@color/primary_text_light"
@@ -224,6 +225,7 @@
         android:id="@+id/rl_explore"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:visibility="gone"
         android:background="?android:attr/selectableItemBackground"
         android:padding="16dp">
 

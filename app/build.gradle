@@ -34,7 +34,8 @@ android {
     compileSdkVersion 27
     buildToolsVersion '27.0.3'
     defaultConfig {
-        applicationId "com.leanote.antnote"
+//        applicationId "com.leanote.antnote"
+        applicationId "com.geek.geeknote"
         minSdkVersion 21
         targetSdkVersion 27
         versionCode 1
@@ -44,7 +45,8 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         buildConfigField "String", "BUGLY_KEY", String.format("\"%s\"", buglyPrdKey)
         manifestPlaceholders = [
-                jpush_appkey : 'c6623d8cee185ba796495fb8'
+//                jpush_appkey : 'c6623d8cee185ba796495fb8'
+                jpush_appkey : '51df2a09b5544ea8efbffa32'
         ]
 
     }

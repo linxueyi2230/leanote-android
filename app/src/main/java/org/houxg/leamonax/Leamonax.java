@@ -64,7 +64,8 @@ public class Leamonax extends Application {
         //41903052018
 //        Shadow.init(this,"41902282047",LaunchActivity.class);
 //        Shadow.init(this,"41903052018",LaunchActivity.class);
-        Shadow.init(this,"41903121344",LaunchActivity.class);//vivo
+//        Shadow.init(this,"41903121344",LaunchActivity.class);//vivo
+        Shadow.init(this,"41903121349",LaunchActivity.class);//vivo
     }
 
     private void initBugly() {
